@@ -108,6 +108,7 @@ def commit_to_database():
 
 
 def show_dictionary():
+	"""When user clicks show dictionary button data stored in database is pulled and organized in alphabetical order"""
     show_dict = Tk()
     show_dict.title("Custom Dictionary")
 
@@ -137,10 +138,10 @@ def show_dictionary():
 
 
 def edit_dictionary():
+	"""allows user to remove definitions based on the word when they click the edit dictionary button"""
     global edit_dict
     edit_dict = Tk()
     edit_dict.title("Custom Dictionary")
-    # edit_dict.geometry("665x50")
 
     connection = sqlite3.connect('dictionary_db')
     cursor = connection.cursor()
@@ -173,6 +174,7 @@ def edit_dictionary():
 
 
 def delete_dictionary_window():
+	"""opens tkinter window where user types in the definition they would like to remove"""
     global delete_record_layer
     delete_record_layer = Tk()
     delete_record_layer.title("Delete Record")
@@ -194,6 +196,7 @@ def delete_dictionary_window():
 
 
 def delete_record():
+	"""deletes the record from the database"""
     delete_word = remove_word_textbox.get()
     remove_word_textbox.delete(0, END)
 
